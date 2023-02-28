@@ -1,0 +1,51 @@
+html {
+  background-color: rgba(209, 209, 207, 0.842);
+}
+
+.body {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  max-height: 50vh;
+  max-width: 70vw;
+}
+
+.main-container {
+  margin: 15% auto;
+  background-color: rgb(255, 255, 255);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-right: 2%;
+  gap: 55%;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+}
+
+#new-task-form {
+  display: flex;
+  margin: 0 4rem;
+}
+
+#new-task-input {
+  border-style: hidden;
+  flex: 1 1 0%;
+}
+
+.clear {
+  margin: 1rem auto;
+}
+
+.content {
+  list-style-type: none;
+  margin: 2%;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>TO-Do-list</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <main class="main-container">
+      <header>
+        <div class="container">
+          <h1 class="todo-text">Today's To Do</h1>
+          <i class="refresh fa fa-refresh"></i>
+        </div>
+        <hr />
+        <form id="new-task-form">
+          <input
+            type="text"
+            id="new-task-input"
+            placeholder="Add to your list..."
+          />
+          <!-- <input type="submit" id="new-task-submit" value="Add task" /> -->
+          <button type="submit" class="add">
+            <i class="add-btn fa fa-reply-all"></i>
+          </button>
+        </form>
+      </header>
+      <section class="task-list">
+        <hr />
+        <div id="tasks">
+          <div class="task">
+            <div class="content"></div>
+            <div class="actions">
+              <button class="clear">Clear all completed</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
