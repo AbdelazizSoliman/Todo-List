@@ -14,6 +14,24 @@ function addTaskToDOM(task) {
   }
   taskElement.dataset.id = task.id;
 
+  const checkbox = document.createElement('input');
+  checkbox.type = 'checkbox';
+  checkbox.addEventListener('change', (event) => {
+    const taskId = taskElement.dataset.id;
+    const taskIndex = tasks.findIndex((task) => task.id.toString() === taskId);
+    if (event.target.checked) {
+      task.completed = true;
+      taskElement.classList.add('completed');
+    } else {
+      task.completed = false;
+      taskElement.classList.remove('completed');
+    }
+    tasks[taskIndex] = task;
+    saveTasksToLocalStorage();
+  });
+
+  taskElement.appendChild(checkbox);
+
   const titleElement = document.createElement('span');
   titleElement.className = 'title';
   titleElement.contentEditable = true;
@@ -26,6 +44,8 @@ function addTaskToDOM(task) {
   const deleteButton = document.createElement('span');
   deleteButton.className = 'del';
   deleteButton.appendChild(document.createTextNode('Delete'));
+
+  taskElement.appendChild(checkbox);
   taskElement.appendChild(titleElement);
   taskElement.appendChild(deleteButton);
   taskList.appendChild(taskElement);
@@ -59,6 +79,15 @@ function deleteTask(taskId) {
   saveTasksToLocalStorage();
 }
 
+function getCompletedTasks() {
+  return tasks.filter((task) => task.done);
+}
+
 export {
-  addTaskToDOM, createNewTask, deleteTask, loadTasks, titleElement,
+  addTaskToDOM,
+  createNewTask,
+  deleteTask,
+  loadTasks,
+  titleElement,
+  getCompletedTasks,
 };

@@ -76,3 +76,8 @@ button {
   min-width: 60vw;
   text-decoration: none;
 }
+
+.task.completed .title {
+  text-decoration: line-through;
+  color: gray;
+}
