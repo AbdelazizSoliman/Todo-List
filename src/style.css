@@ -29,6 +29,7 @@ main {
 .actions {
   display: flex;
   align-items: center;
+  background-color: rgba(162, 162, 165, 0.671);
 }
 
 #new-task-form {
@@ -43,9 +44,35 @@ main {
 
 .clear {
   margin: 1rem auto;
+  background-color: rgb(197, 197, 197);
 }
 
 .content {
   list-style-type: none;
-  margin: 2%;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 40vw;
+  margin-left: 1rem;
+}
+
+button {
+  border-style: hidden;
+}
+
+.del {
+  padding-right: 25px;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  align-items: flex-end;
+  margin-right: 1rem;
+}
+
+.title {
+  min-width: 60vw;
+  text-decoration: none;
 }

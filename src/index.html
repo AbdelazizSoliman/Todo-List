@@ -8,6 +8,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <script
+      src="https://kit.fontawesome.com/be8db3d534.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <main class="main-container">
@@ -23,21 +27,16 @@
             id="new-task-input"
             placeholder="Add to your list..."
           />
-          <!-- <input type="submit" id="new-task-submit" value="Add task" /> -->
           <button type="submit" class="add">
-            <i class="add-btn fa fa-reply-all"></i>
+            <i class="add-btn fa-solid fa-plus"></i>
           </button>
         </form>
       </header>
       <section class="task-list">
         <hr />
-        <div id="tasks">
-          <div class="task">
-            <div class="content"></div>
-            <div class="actions">
-              <button class="clear">Clear all completed</button>
-            </div>
-          </div>
+        <div id="tasks"></div>
+        <div class="actions">
+          <button class="clear" type="submit">Clear all completed</button>
         </div>
       </section>
     </main>

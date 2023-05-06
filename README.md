@@ -41,6 +41,7 @@
 
 - **[Use webpack to bundle JavaScript]**
 - **[Structure the list]**
+- **[Adding your daily task.]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -119,7 +120,6 @@ Clone this repository to your desired folder:
 
 > features you will add to the project.
 
-- **[Adding your daily task.]**
 - **[Mark your tasks as completed.]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
