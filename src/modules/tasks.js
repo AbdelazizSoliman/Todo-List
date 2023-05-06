@@ -1,3 +1,5 @@
+import { markTaskComplete, markTaskIncomplete } from './status.js';
+
 const taskList = document.querySelector('#tasks');
 let tasks = [];
 function createTitleElement(title) {
@@ -27,6 +29,24 @@ function createDeleteButton() {
   return element;
 }
 
+function createCheckbox(checked) {
+  const element = document.createElement('input');
+  element.type = 'checkbox';
+  element.checked = checked;
+  return element;
+}
+
+function handleCheckboxChange(e) {
+  const taskId = e.target.parentElement.dataset.id;
+  if (e.target.checked) {
+    markTaskComplete(taskId);
+    e.target.parentElement.classList.add('done');
+  } else {
+    markTaskIncomplete(taskId);
+    e.target.parentElement.classList.remove('done');
+  }
+}
+
 function addTaskToDOM(task) {
   const taskElement = document.createElement('div');
   taskElement.className = 'task';
@@ -39,6 +59,9 @@ function addTaskToDOM(task) {
   titleElement.addEventListener('input', handleTitleInput);
 
   const deleteButton = createDeleteButton();
+  const checkbox = createCheckbox(task.completed);
+  checkbox.addEventListener('change', handleCheckboxChange);
+  taskElement.appendChild(checkbox);
   taskElement.appendChild(titleElement);
   taskElement.appendChild(deleteButton);
   taskList.appendChild(taskElement);
@@ -93,5 +116,18 @@ function createNewTask(taskText) {
   addTaskToDOM(task);
   saveTasksToLocalStorage();
 }
+
+function handleClearCompletedClick() {
+  tasks = tasks.filter((task) => !task.completed);
+  updateTaskIndexes();
+  saveTasksToLocalStorage();
+  Array.from(taskList.children).forEach((taskElement) => {
+    if (taskElement.classList.contains('done')) {
+      taskElement.remove();
+    }
+  });
+}
+const clearCompletedButton = document.querySelector('.clear-completed');
+clearCompletedButton.addEventListener('click', handleClearCompletedClick);
 
 export { initializeTasks, createNewTask, deleteTask };
