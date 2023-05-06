@@ -1,30 +1,30 @@
-import "./style.css";
+import './style.css';
 
-const taskList = document.querySelector(".content");
+const taskList = document.querySelector('.content');
 const checkboxSelector = 'input[type="checkbox"]';
 
 if (taskList) {
   const tasks = [
     {
-      description: "wash the dishes",
+      description: 'wash the dishes',
       completed: false,
       index: 1,
     },
     {
-      description: "complete To Do list",
+      description: 'complete To Do list',
       completed: false,
       index: 2,
     },
   ];
 
   const createListItem = (task) => {
-    const listItem = document.createElement("li");
-    const checkbox = document.createElement("input");
-    checkbox.setAttribute("type", "checkbox");
-    const taskContent = document.createElement("span");
+    const listItem = document.createElement('li');
+    const checkbox = document.createElement('input');
+    checkbox.setAttribute('type', 'checkbox');
+    const taskContent = document.createElement('span');
     taskContent.innerHTML = task.description;
-    const taskAction = document.createElement("div");
-    taskAction.innerHTML = "<hr>";
+    const taskAction = document.createElement('div');
+    taskAction.innerHTML = '<hr>';
     listItem.appendChild(checkbox);
     listItem.appendChild(taskContent);
     listItem.appendChild(taskAction);
@@ -42,15 +42,15 @@ if (taskList) {
     taskList.appendChild(fragment);
   };
 
-  taskList.addEventListener("click", (event) => {
+  taskList.addEventListener('click', (event) => {
     const clickedElement = event.target;
     if (clickedElement.matches(checkboxSelector)) {
       // Handle checkbox click
-      const listItem = clickedElement.closest("li");
+      const listItem = clickedElement.closest('li');
       const index = Array.from(taskList.children).indexOf(listItem);
       tasks[index].completed = clickedElement.checked;
     }
   });
 
-  document.addEventListener("DOMContentLoaded", populate);
+  document.addEventListener('DOMContentLoaded', populate);
 }
