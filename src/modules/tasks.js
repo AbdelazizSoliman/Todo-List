@@ -1,3 +1,5 @@
+import { markTaskComplete, markTaskIncomplete } from './status.js';
+
 let tasks = [];
 const taskList = document.querySelector('#tasks');
 const titleElement = document.createElement('span');
@@ -10,9 +12,23 @@ function addTaskToDOM(task) {
   const taskElement = document.createElement('div');
   taskElement.className = 'task';
   if (task.completed) {
-    taskElement.classList.add('done');
+    taskElement.classList.add('completed');
   }
   taskElement.dataset.id = task.id;
+
+  const checkbox = document.createElement('input');
+  checkbox.type = 'checkbox';
+  checkbox.checked = task.completed;
+  checkbox.addEventListener('change', (event) => {
+    const taskId = taskElement.dataset.id;
+    if (event.target.checked) {
+      markTaskComplete(taskId);
+      taskElement.classList.add('completed');
+    } else {
+      markTaskIncomplete(taskId);
+      taskElement.classList.remove('completed');
+    }
+  });
 
   const titleElement = document.createElement('span');
   titleElement.className = 'title';
@@ -26,6 +42,12 @@ function addTaskToDOM(task) {
   const deleteButton = document.createElement('span');
   deleteButton.className = 'del';
   deleteButton.appendChild(document.createTextNode('Delete'));
+  deleteButton.addEventListener('click', () => {
+    deleteTask(task.id);
+    taskElement.remove();
+  });
+
+  taskElement.appendChild(checkbox);
   taskElement.appendChild(titleElement);
   taskElement.appendChild(deleteButton);
   taskList.appendChild(taskElement);
@@ -59,6 +81,26 @@ function deleteTask(taskId) {
   saveTasksToLocalStorage();
 }
 
+function getCompletedTasks() {
+  return tasks.filter((task) => task.done);
+}
+
+const clearCompletedButton = document.querySelector('.clear-completed');
+clearCompletedButton.addEventListener('click', () => {
+  tasks = tasks.filter((task) => !task.completed);
+  Array.from(taskList.children).forEach((taskElement) => {
+    if (taskElement.classList.contains('completed')) {
+      taskElement.remove();
+    }
+  });
+  saveTasksToLocalStorage();
+});
+
 export {
-  addTaskToDOM, createNewTask, deleteTask, loadTasks, titleElement,
+  addTaskToDOM,
+  createNewTask,
+  deleteTask,
+  loadTasks,
+  titleElement,
+  getCompletedTasks,
 };

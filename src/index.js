@@ -5,11 +5,13 @@ import {
   deleteTask,
   loadTasks,
   titleElement,
+  getCompletedTasks,
 } from './modules/tasks.js';
 
 const input = document.querySelector('#new-task-input');
 const submitButton = document.querySelector('.add');
 const taskList = document.querySelector('#tasks');
+const filterButton = document.querySelector('#filter-button');
 loadTasks();
 
 // Add task
@@ -28,4 +30,14 @@ taskList.addEventListener('click', (e) => {
     e.target.parentElement.remove();
   }
   titleElement.focus();
+});
+
+filterButton.addEventListener('click', () => {
+  const completedTasks = getCompletedTasks();
+
+  completedTasks.forEach((task) => {
+    const taskElement = document.querySelector(`[data-id="${task.id}"]`);
+    taskElement.remove();
+    deleteTask(task.id);
+  });
 });
