@@ -1,36 +1,31 @@
 import './style.css';
 
-const taskList = document.querySelector('.content');
-if (taskList) {
-  const tasks = [
-    {
-      description: 'wash the dishes',
-      completed: false,
-      index: 1,
-    },
-    {
-      description: 'complete To Do list',
-      completed: false,
-      index: 2,
-    },
-  ];
-  const populate = () => {
-    tasks
-      .sort((a, b) => a.index - b.index)
-      .forEach((task) => {
-        const listItem = document.createElement('li');
-        const checkbox = document.createElement('input');
-        checkbox.setAttribute('type', 'checkbox');
-        const taskContent = document.createElement('span');
-        taskContent.innerHTML = task.description;
-        const taskAction = document.createElement('div');
-        taskAction.innerHTML = '<hr>';
-        listItem.appendChild(checkbox);
-        listItem.appendChild(taskContent);
-        listItem.appendChild(taskAction);
-        taskList.appendChild(listItem);
-      });
-  };
+import {
+  createNewTask,
+  deleteTask,
+  loadTasks,
+  titleElement,
+} from './modules/tasks.js';
 
-  document.addEventListener('DOMContentLoaded', populate);
-}
+const input = document.querySelector('#new-task-input');
+const submitButton = document.querySelector('.add');
+const taskList = document.querySelector('#tasks');
+loadTasks();
+
+// Add task
+submitButton.onclick = (e) => {
+  e.preventDefault();
+  if (input.value !== '') {
+    createNewTask(input.value);
+    input.value = '';
+  }
+};
+
+taskList.addEventListener('click', (e) => {
+  if (e.target.classList.contains('del')) {
+    const { id } = e.target.parentElement.dataset;
+    deleteTask(id);
+    e.target.parentElement.remove();
+  }
+  titleElement.focus();
+});
