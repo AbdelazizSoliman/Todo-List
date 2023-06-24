@@ -5,12 +5,9 @@
 - [📖 About the Project](#about-project)
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
-    - [Key Features](#key-features)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
-- [👥 Authors](#authors)
-- [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
@@ -35,15 +32,7 @@
 
 <!-- Features -->
 
-### Key Features <a name="key-features"></a>
-
-> Describe between 1-3 key features of the application.
-
-- **[Use webpack to bundle JavaScript]**
-- **[Structure the list]**
-- **[Adding your daily task.]**
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+### 
 
 <!-- GETTING STARTED -->
 
@@ -102,25 +91,6 @@ Clone this repository to your desired folder:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- AUTHORS -->
-
-## 👥 Authors <a name="authors"></a>
-
-> Mention all of the collaborators of this project.
-
-👤 **Author1**
-
-- GitHub: [@soliman](https://github.com/githubhandle)
-- Twitter: [@soliman](https://twitter.com/twitterhandle)
-- LinkedIn: [soliman](https://linkedin.com/in/linkedinhandle)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-### Future Features <a name="Future-features"></a>
-
-> features you will add to the project.
-
-- **[Mark your tasks as completed.]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
