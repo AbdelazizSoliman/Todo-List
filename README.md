@@ -5,7 +5,6 @@
 - [📖 About the Project](#about-project)
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
-    - [Key Features](#key-features)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -30,22 +29,6 @@
 <details>
   <summary>Client</summary>
 </details>
-
-<<<<<<< HEAD
-
-<!-- Features -->
-
-### Key Features <a name="key-features"></a>
-
-- **[Use webpack to bundle JavaScript]**
-- **[Structure the list]**
-- **[Adding your daily task.]**
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-=======
-
-> > > > > > > 8f70ecc66e0725ffa83c8e59cee08e0329af5145
 
 <!-- GETTING STARTED -->
 
@@ -103,26 +86,6 @@ Clone this repository to your desired folder:
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<<<<<<< HEAD
-
-<!-- AUTHORS -->
-
-## 👥 Authors <a name="authors"></a>
-
-👤 **Author1**
-
-- GitHub: [@abdelazizsoliman](https://github.com/abdelazizsoliman)
-- Twitter: [@Abdelaz21958317](https://twitter.com/Abdelaz21958317)
-- LinkedIn: [Abdelaziz Soliman](https://www.linkedin.com/in/abdelaziz-soliman-16989b89/)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-### Future Features <a name="Future-features"></a>
-
-- **[Mark your tasks as completed.]**
-
-=======
 
 <!-- CONTRIBUTING -->
 
