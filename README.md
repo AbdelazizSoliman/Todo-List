@@ -30,10 +30,6 @@
   <summary>Client</summary>
 </details>
 
-<!-- Features -->
-
-### 
-
 <!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
@@ -91,9 +87,6 @@ Clone this repository to your desired folder:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- CONTRIBUTING -->
 
 ## 🤝 Contributing <a name="contributing"></a>
@@ -115,6 +108,8 @@ Feel free to check the [issues page](../../issues/).
 <!-- ACKNOWLEDGEMENTS -->
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
+I'm thankful to <a href="https://www.microverse.org//">Microverse</a> for providing a study platform which guided me through this project.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

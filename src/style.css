@@ -76,3 +76,8 @@ button {
   min-width: 60vw;
   text-decoration: none;
 }
+
+.done .title {
+  text-decoration: line-through;
+  color: rgb(124, 32, 32);
+}
